@@ -1,3 +1,5 @@
+# script to setup a prod server with devcontainer features.
+
 # setting up the prod machine
 - scaffold the devcontainer 
 `source <(curl -s https://gist.githubusercontent.com/luutuankiet/5c88f9640c596ec5a23a96337304756b/raw/boilerplate_devcontainer.sh)`
@@ -27,7 +29,7 @@
 		60001 // ssh
 	]
 ```
-- run devcontainer : 
- `devcontainer up --config ETL/gtd_dash/.devcontainer_prod/devcontainer.json --workspace-folder ETL/gtd_dash`
+- cd to the dir & run devcontainer : 
+ `devcontainer up --config .devcontainer_prod/devcontainer.json --workspace-folder .`
 (add `--remove-existing-container` if you want to rebuild)
 - clone the repo and unpack to the workspace
