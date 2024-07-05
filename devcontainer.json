@@ -171,10 +171,18 @@
 	},
 	"runArgs": [
 		"--name",
-		"PROD_gtd_ETL"
-	],
-	"forwardPorts": [
-		60000, // dagster
-		60001 // ssh
+		"PROD_gtd_ETL",
+		"-p=60000:60000", // ssh
+		"-p=60001:60001" // dagster
 	]
+	// forwardport only work for  vs code session
+	// "forwardPorts": [ 
+	// 	60000, // dagster
+	// 	60001 // ssh
+	// ]
+	// appport only bind to localhost 
+	// "appPort": [
+	// 	60000, // dagster
+	// 	60001 // ssh
+	// ]
 }
