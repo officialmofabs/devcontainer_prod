@@ -80,6 +80,3 @@ npm install duckdb-async@0.9.2
 
 # LD CLI
 npm install -g @lightdash/cli
-
-echo "node_modules" >> .gitignore
-
