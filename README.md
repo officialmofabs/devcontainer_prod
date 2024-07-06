@@ -28,6 +28,9 @@
 		"-p=60001:60001" // dagster
 	]
 ```
+- change appropriate env in `containerEnv`
+
+
 - cd to the dir & run devcontainer : 
  `devcontainer up --config .devcontainer_prod/devcontainer.json --workspace-folder .`
 (add `--remove-existing-container` if you want to rebuild)

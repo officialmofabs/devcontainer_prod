@@ -169,6 +169,8 @@
 			}
 		}
 	},
+
+	"containerEnv":{"TARGET_SCHEMA": "prod"},
 	"runArgs": [
 		"--name",
 		"PROD_gtd_ETL",
