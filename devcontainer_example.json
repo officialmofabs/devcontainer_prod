@@ -11,6 +11,32 @@
 	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
 	"postCreateCommand": "bash -i .devcontainer_prod/postCreateCommand.sh",
 	"remoteUser": "root",
+
+	// =======================================================================================================================	
+	// =======================================================================================================================	
+	// ================================================= container runtime environment	======================================
+	// =======================================================================================================================	
+	// =======================================================================================================================	
+	// =======================================================================================================================	
+	// defaults
+	"containerEnv": {
+		"TARGET_SCHEMA": "prod"
+	},
+	"runArgs": [
+		// labelling the container with a name when shown in `docker ps`
+		// example :
+		"--name",
+		"PROD_gtd_ETL", 
+		// to forward ports, see example below
+		// NOTE the devcontainer needs to be rebuilt after adding / changing the port mapping.
+		"-p=60000:60000", // ssh
+		"-p=60001:60001", // dagster
+		"-p=60005:60005", // websearch
+
+		// to mount additional volumes. 
+		// NOTE the workdir used when invoking `devcontainer up .... --workdir-folder .` is already mounted to container /workspace
+		"-v /host/path:/container/path"
+	],
 	// =======================================================================================================================	
 	// =======================================================================================================================	
 	// ================================================= FEATURE : DOCKER IN DOCKER & NPM	======================================
@@ -168,23 +194,5 @@
 				}
 			}
 		}
-	},
-
-	"containerEnv":{"TARGET_SCHEMA": "prod"},
-	"runArgs": [
-		"--name",
-		"PROD_gtd_ETL",
-		"-p=60000:60000", // ssh
-		"-p=60001:60001" // dagster
-	]
-	// forwardport only work for  vs code session
-	// "forwardPorts": [ 
-	// 	60000, // dagster
-	// 	60001 // ssh
-	// ]
-	// appport only bind to localhost 
-	// "appPort": [
-	// 	60000, // dagster
-	// 	60001 // ssh
-	// ]
+	}
 }
