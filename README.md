@@ -1,6 +1,14 @@
-# script to setup a prod server with devcontainer features.
+# Consolidated devcontainer configs as VPS-like server
+- This repo contains working configs that can be used to spin up a server-like environment in your local machine.
+- What can you do with it?
+	- Isolate development projects as separate containers (think filesystem, environment vars, running process etc.)
+	- Create docker containers inside the container itself, (utilizing [docker-in-docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) under the hood)
+	- Use vs code to SSH to the container like a normal server
 
-# prequisite
+- More info on devcontainers [here](https://code.visualstudio.com/docs/devcontainers/containers)
+
+
+## prequisite
 - devcontainer cli `npm install -g @devcontainers/cli`
 - docker
 
@@ -35,6 +43,9 @@
 	```
 	- change persistent env variable in `containerEnv`
 	- full list of params and args in [devcontainer doc](https://containers.dev/implementors/json_reference/)
+
+
+- copy `postCreateCommand_example.sh` to `postCreateCommand.sh` and make changes per your requirement. recommended to keep sections python and zsh setups
 
 
 - spin up the devcontainer. By default `--workspace-folder` is required which will bind mount current dir to container's `/workspace` dir
