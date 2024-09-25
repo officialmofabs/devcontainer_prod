@@ -5,6 +5,9 @@
 	- Create docker containers inside the container itself, (utilizing [docker-in-docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker) under the hood)
 	- Use vs code to SSH to the container like a normal server
 
+![alt text](image.png)
+
+
 - More info on devcontainers [here](https://code.visualstudio.com/docs/devcontainers/containers)
 
 
@@ -49,7 +52,7 @@
 
 
 - spin up the devcontainer. By default `--workspace-folder` is required which will bind mount current dir to container's `/workspace` dir
- `devcontainer up --config .devcontainer_prod/devcontainer.json --workspace-folder .`
+- run `devcontainer up --config .devcontainer_prod/devcontainer.json --workspace-folder .`
 (add `--remove-existing-container` if you want to rebuild)
 - clone the repo and unpack to the workspace
 
