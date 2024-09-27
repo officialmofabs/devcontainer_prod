@@ -33,10 +33,10 @@ print_section "SETUP PYTHON"
 apt-get update && apt-get install -y python3-venv
 
 # init then source env vars
-print_section "INIT & SOURCE ENV VARS"
-chmod +x ./env.sh
+# print_section "INIT & SOURCE ENV VARS"
+# chmod +x ./env.sh
 
-. ./env.sh
+# . ./env.sh
 
 
 
