@@ -81,7 +81,7 @@ curl -o- https://gist.githubusercontent.com/luutuankiet/fbb70fca0f7f948c4e102442
 #  =======================================================================================================================
 
 # deps for sqltools - duckdb driver
-npm install duckdb-async@0.9.2
+npm install -g duckdb-async@0.10.2
 
 # LD CLI
 npm install -g @lightdash/cli
