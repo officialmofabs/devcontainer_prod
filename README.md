@@ -18,9 +18,9 @@
 
 
 ## scaffold the devcontainer 
-- use followg command to clone & rename the dir to `.devcontainer_prod` which gets referred in the scripts (no need to cd to the repo after cloning)
-`git clone https://github.com/luutuankiet/.devcontainer_prod.git .devcontainer_prod` 
-- open config at  `.devcontainer_prod/devcontainer.json` and make changes for features i.e.
+- use followg command to clone & rename the dir to `devcontainer_prod` which gets referred in the scripts (no need to cd to the repo after cloning)
+`git clone https://github.com/luutuankiet/devcontainer_prod.git devcontainer_prod` 
+- open config at  `devcontainer_prod/devcontainer.json` and make changes for features i.e.
 ```json
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
@@ -52,7 +52,7 @@
 
 
 - spin up the devcontainer. By default `--workspace-folder` is required which will bind mount current dir to container's `/workspace` dir
-- run `devcontainer up --config .devcontainer_prod/devcontainer.json --workspace-folder .`
+- run `devcontainer up --config devcontainer_prod/devcontainer.json --workspace-folder .`
 (add `--remove-existing-container` if you want to rebuild)
 - clone the repo and unpack to the workspace
 
