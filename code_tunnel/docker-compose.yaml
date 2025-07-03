@@ -1,0 +1,29 @@
+services:
+  devcontainer:
+    container_name: devcontainer_mosgarage
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DEBIAN_FRONTEND: noninteractive
+        TZ: Europe/London
+         USER_ID: 1001
+        GROUP_ID: 1001
+        DOCKER_GROUP_ID: 968
+        PYTHON_VERSION: ${PYTHON_VERSION}
+        SSHD_PORT: ${SSHD_PORT}
+        START_SSHD: ${START_SSHD}
+        MOSGARAGE_PASSWORD: ${mosgarage_PASSWORD}
+    hostname: devcontainer_mosgarage
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${TARGET_DIR}:/workspaces:cached"
+      - "${HOME}/.vscode-server:/home/mosgarage/.vscode-server"
+      - "${HOME}/.gitconfig:/home/mosgarage/.gitconfig"
+      - "${HOME}/.config/gcloud:/home/mosgarage/.config/gcloud"
+      - "${HOME}/.ssh:/home/mosgarage/.ssh"
+    # network_mode: host
+    env_file:
+      - .env
+    ports:
+     - "60003:${SSHD_PORT}"

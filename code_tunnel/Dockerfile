@@ -14,10 +14,10 @@ ARG DOCKER_GROUP_ID=${DOCKER_GROUP_ID}
 ARG PYTHON_VERSION=${PYTHON_VERSION:-3.11}
 
 # Create non-root user and Docker group dynamically
-RUN groupadd -g ${GROUP_ID} devuser && \
-    useradd -u ${USER_ID} -g devuser -m devuser && \
+RUN groupadd -g ${GROUP_ID} mosgarage && \
+    useradd -u ${USER_ID} -g mosgarage -m mosgarage && \
     groupadd -g ${DOCKER_GROUP_ID} docker && \
-    usermod -aG docker devuser
+    usermod -aG docker mosgarage
 
 
 
@@ -48,15 +48,15 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 
-# Set devuser's default shell to bash
-RUN chsh -s /bin/bash devuser
+# Set mosgarage's default shell to bash
+RUN chsh -s /bin/bash mosgarage
 
 # Set the PYTHONPATH dynamically based on the Python version argument
 ARG PYTHONPATH=/usr/bin/python${PYTHON_VERSION}
 
-# Allow devuser to run sudo without password
-RUN echo "devuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/devuser && \
-    chmod 0440 /etc/sudoers.d/devuser    
+# Allow mosgarage to run sudo without password
+RUN echo "mosgarage ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/mosgarage && \
+    chmod 0440 /etc/sudoers.d/mosgarage    
 
 # Create a symbolic link to ensure `python` refers to the correct Python version
 RUN ln -s /usr/bin/python${PYTHON_VERSION} /usr/bin/python
@@ -68,12 +68,12 @@ ARG START_SSHD=${START_SSHD}
 COPY container_sshd.sh /usr/local/bin/container_sshd.sh
 RUN chmod +x /usr/local/bin/container_sshd.sh && \
     /usr/local/bin/container_sshd.sh
-ARG DEVUSER_PASSWORD
-ENV DEVUSER_PASSWORD=${DEVUSER_PASSWORD}
-RUN echo "devuser:${DEVUSER_PASSWORD}" | chpasswd
+ARG mosgarage_PASSWORD
+ENV mosgarage_PASSWORD=${mosgarage_PASSWORD}
+RUN echo "mosgarage:${mosgarage_PASSWORD}" | chpasswd
 
 # Switch to non-root user
-USER devuser
+USER mosgarage
 
 # Set the default workspace directory
 ENV REMOTE_WORKSPACE=/workspaces
