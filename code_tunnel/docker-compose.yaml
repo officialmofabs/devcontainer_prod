@@ -13,11 +13,11 @@ services:
         PYTHON_VERSION: ${PYTHON_VERSION}
         SSHD_PORT: ${SSHD_PORT}
         START_SSHD: ${START_SSHD}
-        MOSGARAGE_PASSWORD: ${mosgarage_PASSWORD}
+        MOSGARAGE_PASSWORD: Password123.
     hostname: devcontainer_mosgarage
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "${TARGET_DIR}:/workspaces:cached"
+      - "/workspaces/devcontainer_mosgarage:/workspaces:cached"
       - "${HOME}/.vscode-server:/home/mosgarage/.vscode-server"
       - "${HOME}/.gitconfig:/home/mosgarage/.gitconfig"
       - "${HOME}/.config/gcloud:/home/mosgarage/.config/gcloud"

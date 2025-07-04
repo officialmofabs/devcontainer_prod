@@ -7,16 +7,8 @@
 	"remoteUser": "root",
 	"customizations": {
 		"vscode": {
-			"extensions": [
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// ================================================= VS CODE EXTENSIONS SETTINGS	======================================
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// defaults
-				"mechatroner.rainbow-csv",
-				"chrisdias.vscode-opennewinstance",
+			"extensions":
+				"chrisdias.vscode-opennewinstance":,
 				"mhutchie.git-graph",
 				"ms-python.debugpy",
 				"ms-python.python",
@@ -35,30 +27,71 @@
 				"cweijan.vscode-office",
 				"dvirtz.parquet-viewer",
 				"GitHub.vscode-pull-request-github",
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// ================================================= EXTENSIONS - DB CONNECTIONS	======================================
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// =======================================================================================================================	
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
 				"mtxr.sqltools-driver-sqlite",
 				"randomfractalsinc.duckdb-sql-tools",
 				"taoklerks.poor-mans-t-sql-formatter-vscode",
 				"shakram02.bash-beautify",
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// ================================================= EXTENSIONS - DBT	======================================
-				// =======================================================================================================================	
-				// =======================================================================================================================	
-				// =======================================================================================================================	
 				"bastienboutonnet.vscode-dbt",
 				"henriblancke.vscode-dbt-formatter",
 				"innoverio.vscode-dbt-power-user",
 				"samuelcolvin.jinjahtml",
-				"redhat.vscode-yaml"
-			],
+				"redhat.vscode-yaml",
+				"shyykoserhiy.git-autoconfig",
+				"github.vscode-github-actions",
+				"bierner.markdown-preview-github-styles",
+				"jeffwilcox.vscode-toaster",
+				"codezombiech.gitignore",
+				"GitHub.codespaces",
+				"formulahendry.docker-extension-pack",
+				"p1c2u.docker-compose",
+				"ms-vscode-remote.remote-containers",
+				"Zim.vsc-docker",:
+				"TqrHsn.vscode-docker-registry-explorer",
+				"delgee.sld-docker-builder",
+				"KilianJPopp.docker-compose-file-support",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-azuretools.vscode-containers",
+				"ms-vscode.vscode-node-azure-pack",
+				"googlecloudtools.cloudcode",
+				"dsebastien.vscode-containers-pack",
+				"SakshayMahna.ros2env",
+				"loadsmart.vscode-go-extension-pack",
+				"othy1010.kompose",
+				"emallin.phpunit",
+				"balaprasanna.bala-bks-docker-snippets",
+}   "features": {
+		"ghcr.io/devcontainers/features/common-utils": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/java:1": {},
+		"ghcr.io/devcontainers/features/dotnet:1": {},
+		"ghcr.io/devcontainers/features/rust:1": {},
+		"ghcr.io/devcontainers/features/csharp:1": {},
+		"ghcr.io/devcontainers/features/cpp:1": {},
+		"ghcr.io/devcontainers/features/ruby:1": {},
+		"ghcr.io/devcontainers/features/php:1": {},
+		"ghcr.io/devcontainers/features/scala:1": {},
+		"ghcr.io/devcontainers/features/swift:1": {},
+		"ghcr.io/devcontainers/features/elixir:1": {},
+		"ghcr.io/devcontainers/features/terraform:0": {},
+		"ghcr.io/devcontainers/features/powershell:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/kubernetes:1": {},
+		"ghcr.io/devcontainers/features/openshift-cli:1": {},
+		"ghcr.io/devcontainers/features/istio-cli:1": {},
+		"ghcr.io/devcontainers/features/argocd:1": {},
+		"ghcr.io/devcontainers/features/argoworkflows:1": {},
+		"ghcr.io/devcontainers/features/argocli:1": {},
+		"ghcr.io/devcontainers/features/argotoolbox:1": {},
+		},
 			// =======================================================================================================================	
 			// =======================================================================================================================	
 			// ================================================= SETTINGS - DEFAULTS	======================================
@@ -77,9 +110,9 @@
 				},
 				"python.defaultInterpreterPath": ".venv/bin/python",
 				"python.venvFolders": [
-					"${workspaceFolder}/.venv"
+					"/workspaces/devcontainer_mosgarage/workspace.venv"
 				],
-				"python.envFile": "${workspaceFolder}/.env",
+				"python.envFile": "/workspaces/devcontainer_mosgarage/workspace/.env",
 				"python.terminal.activateEnvironment": true,
 				// =======================================================================================================================	
 				// =======================================================================================================================	
@@ -153,38 +186,36 @@
 		"--name",
 		"devcontainer_mosgarage",
 		"-p=2222:2222" // ssh
-	]
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	 "features": [
-        "ghcr.io/devcontainers/features/docker-outside-of-docker": {},
-        "ghcr.io/devcontainers/features/azure-cli:1": {},
-        "ghcr.io/devcontainers/features/sshd:1": {},
-		"ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/devcontainers/features/azure-cli:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/devcontainers/features/dotnet:2": {},
-		"ghcr.io/devcontainers/features/sshd:1": {},
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/anaconda:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/stuartleeks/dev-container-features/add-host:1": {},
-		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {},
-		"ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
-		"ghcr.io/joedmck/devcontainer-features/wrangler:1": {},
+		"ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {},
+		"ghcr.io/rjfmachado/devcontainer-features/cloud-native:1": {},
+		"ghcr.io/eliises/devcontainer-features/bash-profile:1": {},
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {},
+		"ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
 		"ghcr.io/azure/azure-dev/azd:0": {},
-		"ghcr.io/nikiforovall/devcontainer-features/dotnet-csharpier:1": {},
+		"ghcr.io/itsmechlark/features/act:1": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/create-remote-user:0": {},
 		"ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {},
-		"ghcr.io/devcontainers-extra/features/apt-packages:1": {},
+		"ghcr.io/devcontainers-extra/features/angular-cli:2": {},
+		"ghcr.io/devcontainers-extra/features/ansible:2": {},
+		"ghcr.io/devcontainers-extra/features/apt-get-packages:1": {},
 		"ghcr.io/devcontainers-extra/features/bash-command:1": {},
-		"ghcr.io/devcontainers-extra/features/chisel:1": {},
 		"ghcr.io/devcontainers-extra/features/circleci-cli:1": {},
-		"ghcr.io/devcontainers-extra/features/cloudflare-wrangler:1": {},
+		"ghcr.io/devcontainers-extra/features/cloudflared:1": {},
 		"ghcr.io/devcontainers-extra/features/cmake:1": {},
-		"ghcr.io/devcontainers-extra/features/composer:1": {},
-		"ghcr.io/devcontainer-community/devcontainer-features/asdf-vm.com:1": {},
+		"ghcr.io/devcontainers-extra/features/cosign:1": {},
 		"ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire:1": {},
-		"ghcr.io/coder/devcontainer-features/code-server:1": {},
-        "ghcr.io/devcontainers/features/azure-cli:latest": {},
-        "ghcr.io/devcontainers/features/github-cli:latest":{},{}
-        "ghcr.io/devcontainers/features/common-utils:2": {},
-}
+		"ghcr.io/roul/devcontainer-features/bitwarden-cli:1": {},
+		"ghcr.io/coder/devcontainer-features/code-server:1": {}
+	}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.

@@ -52,7 +52,7 @@
 
 
 - spin up the devcontainer. By default `--workspace-folder` is required which will bind mount current dir to container's `/workspace` dir
-- run `devcontainer up --config devcontainer_prod/devcontainer.json --workspace-folder .`
+- run `devcontainer up --config devcontainer_mosgarage/devcontainer.json --workspace-folder .`
 (add `--remove-existing-container` if you want to rebuild)
 - clone the repo and unpack to the workspace
 

@@ -5,17 +5,19 @@ ARG USERNAME=root
 
 
 # Accept dynamic user and group IDs at build time
-ARG USER_ID=${USER_ID}
-ARG GROUP_ID=${GROUP_ID}
-ARG DOCKER_GROUP_ID=${DOCKER_GROUP_ID}
+ARG USER_ID=1001
+ARG GROUP_ID=1001
+ARG DOCKER_GROUP_ID=968
+ARG mosgarage_PASSWORD=Password123.
+
 
 
 # Accept Python version as a build argument
 ARG PYTHON_VERSION=${PYTHON_VERSION:-3.11}
 
 # Create non-root user and Docker group dynamically
-RUN groupadd -g ${GROUP_ID} mosgarage && \
-    useradd -u ${USER_ID} -g mosgarage -m mosgarage && \
+RUN groupadd -g 1001 mosgarage && \
+    useradd -u 1001 -g mosgarage -m mosgarage && \
     groupadd -g ${DOCKER_GROUP_ID} docker && \
     usermod -aG docker mosgarage
 
